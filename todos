@@ -1,0 +1,20 @@
+Todos
+-- Create a new panel for trainee                   -- Completed
+-- Delete the dashboard                             -- Completed
+-- Create a Subscription Resource                   -- Completed
+-- Create a registration page                       -- Completed
+-- Create a Resource to give the notes to the gym   -- Completed
+-- Create a Page to show plans and prices           -- Completed
+-- Create Chat page                                 -- Completed
+
+-- Implement Chat functionality                     -- Completed
+    -- Fix the windows is not going down in the receiver side
+    -- Fix the design of the chat on mobile
+
+-- Implement the subscription functionality
+-- Create a page for food system
+-- make private coaches
+
+
+later todos
+-- Can access panel in production
