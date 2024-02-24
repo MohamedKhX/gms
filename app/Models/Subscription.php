@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\PaymentMethod;
 use App\Enums\SubscriptionStatus;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +17,12 @@ class Subscription extends Model
         'created_at',
         'updated_at',
     ];
+
+    protected $casts = [
+        'payment_method' => PaymentMethod::class,
+    ];
+
+    protected $table = 'trainee_subscriptions';
 
     public function trainee(): BelongsTo
     {
@@ -38,4 +45,14 @@ class Subscription extends Model
         });
     }
 
+    public function pricePaid(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            if($this->payment_method == PaymentMethod::CASH) {
+                return $this->price . ' د.ل ';
+            }
+
+            return $this->price_dollar . ' دولار ';
+        });
+    }
 }

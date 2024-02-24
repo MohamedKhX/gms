@@ -2,6 +2,7 @@
 
 namespace App\Filament\Trainee\Resources;
 
+use App\Enums\PaymentMethod;
 use App\Enums\SubscriptionStatus;
 use App\Filament\Trainee\Resources\SubscriptionResource\Pages;
 use App\Filament\Trainee\Resources\SubscriptionResource\RelationManagers;
@@ -46,13 +47,19 @@ class SubscriptionResource extends Resource
                     ->color(Color::Amber)
                     ->date(),
 
-                Tables\Columns\TextColumn::make('price')
+                Tables\Columns\TextColumn::make('pricePaid')
                     ->translateLabel()
                     ->label('Price')
                     ->badge()
                     ->color('success')
-                    ->suffix(' د.ل ')
                     ->sortable(),
+
+                Tables\Columns\TextColumn::make('payment_method')
+                    ->label('Payment Method')
+                    ->translateLabel()
+                    ->badge()
+                    ->color(Color::Green)
+                    ->formatStateUsing(fn($state) => $state->translate()),
 
                 Tables\Columns\TextColumn::make('status')
                     ->label('Status')

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Trainee\Pages;
 
+use Filament\Infolists\Components\Actions\Action;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
 

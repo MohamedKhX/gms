@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 
 Route::redirect('/login', '/admin');
+
+Route::get('/checkout/{plan:stripe_price_id}/{plan_id}',  [SubscriptionController::class, 'checkout'])->name('checkout');
+Route::get('/subscribe/{plan:id}', [SubscriptionController::class, 'subscribe'])->name('subscribe');
+Route::get('/cancel',    [SubscriptionController::class, 'cancel'])->name('cancel');
+
 
 /*
 Route::view('dashboard', 'dashboard')

@@ -22,6 +22,7 @@ class PlanSeeder extends Seeder
         $plan1 = Plan::factory()->create([
             'name' => 'باقة الاقتصادية',
             'price' => 80,
+            'price_dollar' => 12,
             'duration' => 30,
             'description' => 'توفر لك هذه الباقة الاقتصادية العديد من المزايا والخدمات التي تساعدك على تحقيق أهدافك بأقل تكلفة ممكنة.',
         ]);
@@ -29,9 +30,10 @@ class PlanSeeder extends Seeder
         $plan1->sports()->attach([$sport1->id, $sport2->id]);
 
         $plan2 = Plan::factory()->create([
-            'name' => 'VIP',
-            'price' => 260,
-            'duration' => 30,
+            'name'      => 'VIP',
+            'price'     => 260,
+            'price_dollar' => 35,
+            'duration'  => 30,
             'description' => 'توفر لك هذه الباقة جميع الرياضات والخدمات المتوفرة في الصالة بأعلى مستوى من الجودة والراحة.',
         ]);
 
@@ -39,7 +41,8 @@ class PlanSeeder extends Seeder
 
         $plan2 = Plan::factory()->create([
             'name' => 'باقة الرياضيات القتالية',
-            'price' => 260,
+            'price' => 120,
+            'price_dollar' => 20,
             'duration' => 30,
             'description' => 'توفر لك هذه الباقة الرياضات القتالية مع أفضل المدربين وأحدث الأجهزة والمعدات.',
         ]);

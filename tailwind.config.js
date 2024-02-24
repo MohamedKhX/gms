@@ -16,6 +16,11 @@ export default {
             },
         },
     },
-
+    variants: {
+        extend: {
+            gridTemplateColumns: ['responsive'],
+            gap: ['responsive'],
+        },
+    },
     plugins: [forms],
 };

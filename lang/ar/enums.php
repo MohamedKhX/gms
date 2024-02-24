@@ -23,5 +23,10 @@ return [
     'subscription_status' => [
         \App\Enums\SubscriptionStatus::Active->value  => 'نشط',
         \App\Enums\SubscriptionStatus::Expired->value => 'منتهي',
-    ]
+    ],
+
+    'payment_method' => [
+        \App\Enums\PaymentMethod::CASH->value => 'نقدي',
+        \App\Enums\PaymentMethod::CARD->value => 'بطاقة',
+    ],
 ];

