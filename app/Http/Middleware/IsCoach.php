@@ -24,7 +24,7 @@ class IsCoach
                 ->danger()
                 ->send();
 
-            return redirect()->back();
+            return redirect()->route('filament.coach.auth.login');
         }
 
         return $next($request);

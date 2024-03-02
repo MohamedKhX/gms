@@ -35,7 +35,7 @@ class TraineeResource extends Resource
                     ->label('Full Name')
                     ->translateLabel(),
 
-                Tables\Columns\TextColumn::make('gender')
+                Tables\Columns\TextColumn::make('user.gender')
                     ->label('Gender')
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())

@@ -24,7 +24,7 @@ class IsTrainee
                 ->danger()
                 ->send();
 
-            return redirect()->back();
+            return redirect()->route('filament.trainee.auth.login');
         }
 
         return $next($request);
