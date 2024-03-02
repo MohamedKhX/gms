@@ -1,41 +1,14 @@
 Todos
--- Create a new panel for trainee                   -- Completed
--- Delete the dashboard                             -- Completed
--- Create a Subscription Resource                   -- Completed
--- Create a registration page                       -- Completed
--- Create a Resource to give the notes to the gym   -- Completed
--- Create a Page to show plans and prices           -- Completed
--- Create Chat page                                 -- Completed
-
--- Implement Chat functionality                     -- Completed
-    -- Fix the windows is not going down in the receiver side   -- Completed
-    -- Fix the design of the chat on mobile                     -- Completed
-
--- Implement the subscription functionality         -- Completed
--- make private coaches                             -- Completed
--- Create a page for food system                    -- Completed
-
-
--- Make a panel for the coach       -- Completed
--- Make the notes page              -- Completed
--- Make the chat page               -- Completed
--- Make the chat min-height         -- Completed
--- Make a query for the trainees
--- Make the statistics page
--- Make the ability to make a diet for them
-
--- Complete Admin Statistics page
-
--- Complete The landing page
-
--- Make the application closed on the next saturday -- Completed
-
--- Make the application production ready with (Coach, admin, trainee)
-
--- Test the website
-
--- Fix the problems that accord to you
-
-
-later todos
+-- Show diet html                                          -- Completed
+-- Only the user type can login to their panel             -- Completed
+-- when switch url logout                                  -- Completed
+-- Complete Admin statistics page                          -- Completed
+-- Complete the landing page                               -- Today
+-- Make new data                                           -- Today
+-- Make coaches_trainees table
+-- Make the correct query for trainees in the coach panel
 -- Can access panel in production
+
+Later Todos:
+-- Write comments in the code
+-- Make the folder and some code invisible

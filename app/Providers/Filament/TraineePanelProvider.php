@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Trainee\Pages\Auth\EditProfile;
 use App\Filament\Trainee\Pages\Auth\Register;
+use App\Http\Middleware\IsTrainee;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -53,6 +54,7 @@ class TraineePanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
+                IsTrainee::class,
                 Authenticate::class,
             ])
             ->viteTheme('resources/css/filament/trainee/theme.css');

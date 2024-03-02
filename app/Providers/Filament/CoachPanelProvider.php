@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Http\Middleware\IsCoach;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -31,9 +32,6 @@ class CoachPanelProvider extends PanelProvider
             ])
             ->discoverResources(in: app_path('Filament/Coach/Resources'), for: 'App\\Filament\\Coach\\Resources')
             ->discoverPages(in: app_path('Filament/Coach/Pages'), for: 'App\\Filament\\Coach\\Pages')
-            ->pages([
-                Pages\Dashboard::class,
-            ])
             ->discoverWidgets(in: app_path('Filament/Coach/Widgets'), for: 'App\\Filament\\Coach\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -51,6 +49,7 @@ class CoachPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
+                IsCoach::class,
                 Authenticate::class,
             ])
             ->viteTheme('resources/css/filament/trainee/theme.css');

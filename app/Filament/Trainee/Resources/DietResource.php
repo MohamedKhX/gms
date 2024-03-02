@@ -61,7 +61,8 @@ class DietResource extends Resource
                 TextEntry::make('content')
                     ->label('Diet')
                     ->translateLabel()
-                    ->html()
+                    ->extraAttributes(['class' => 'bg-gray-4    00'])
+                    ->markdown(),
             ]);
     }
 
