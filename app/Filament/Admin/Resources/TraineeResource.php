@@ -81,7 +81,7 @@ class TraineeResource extends Resource
                             ->required(),
 
                         Forms\Components\Hidden::make('type')
-                            ->default(UserType::Coach->value),
+                            ->default(UserType::Trainee->value),
 
                         Forms\Components\Fieldset::make('user info')
                             ->label('User Info')
