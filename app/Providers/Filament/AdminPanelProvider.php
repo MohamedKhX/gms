@@ -3,7 +3,10 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Admin\Pages\Login;
+use App\Filament\Admin\Resources\ProductResource;
 use App\Http\Middleware\IsAdmin;
+use Awcodes\Overlook\OverlookPlugin;
+use Awcodes\Overlook\Widgets\OverlookWidget;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -28,6 +31,21 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->plugins([
+                OverlookPlugin::make()
+                    ->excludes([
+                        ProductResource::class
+                    ])
+                    ->sort(2)
+                    ->columns([
+                        'default' => 1,
+                        'sm' => 2,
+                        'md' => 3,
+                        'lg' => 4,
+                        'xl' => 5,
+                        '2xl' => null,
+                    ]),
+            ])
             ->login()
             ->colors([
                 'primary' => Color::Orange,
@@ -39,7 +57,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\\Filament\\Admin\\Widgets')
             ->widgets([
-
+                OverlookWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -53,8 +71,9 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                IsAdmin::class,
+/*                IsAdmin::class,*/
                 Authenticate::class,
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/trainee/theme.css');
     }
 }

@@ -36,27 +36,33 @@ class StatsOverview extends BaseWidget
         return [
             Stat::make(__('Total Revenue'),       "$totalRevenue د .ل ")
                 ->description('إجمالي الإيرادات بالاشتراكات العادية')
-                ->color(Color::Orange),
+                ->chart([7, 2, 10, 3, 15, 4, 17])
+                ->color('success'),
 
             Stat::make(__('Revenue This Year'),        "$lastYearRevenue د .ل ")
                 ->description('إجمالي الإيرادات بالاشتراكات العادية')
-                ->color(Color::Orange),
+                ->chart([7, 2, 10, 3, 15, 4, 17])
+                ->color('success'),
 
             Stat::make(__('Revenue This Month'),      "$lastMonthRevenue د .ل ")
                 ->description('إجمالي الإيرادات بالاشتراكات العادية')
-                ->color(Color::Orange),
+                ->chart([7, 2, 10, 3, 15, 4, 17])
+                ->color('success'),
 
             Stat::make(__('Total Revenue'),       "$totalRevenueCard دولار ")
                 ->description('إجمالي الإيرادات بالاشتراكات بالبطاقة')
-                ->color(Color::Orange),
+                ->chart([7, 2, 10, 3, 15, 4, 17])
+                ->color('success'),
 
             Stat::make(__('Revenue This Year'),        "$lastYearRevenueCard دولار ")
                 ->description('إجمالي الإيرادات بالاشتراكات بالبطاقة')
-                ->color(Color::Orange),
+                ->chart([7, 2, 10, 3, 15, 4, 17])
+                ->color('success'),
 
             Stat::make(__('Revenue This Month'),      "$lastMonthRevenueCard دولار ")
                 ->description('إجمالي الإيرادات بالاشتراكات بالبطاقة')
-                ->color(Color::Orange),
+                ->chart([7, 2, 10, 3, 15, 4, 17])
+                ->color('success'),
         ];
     }
 }

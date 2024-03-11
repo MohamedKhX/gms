@@ -54,7 +54,7 @@ class TraineePanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                IsTrainee::class,
+/*                IsTrainee::class,*/
                 Authenticate::class,
             ])
             ->viteTheme('resources/css/filament/trainee/theme.css');

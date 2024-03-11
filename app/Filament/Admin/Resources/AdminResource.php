@@ -4,8 +4,9 @@ namespace App\Filament\Admin\Resources;
 
 use App\Enums\Gender;
 use App\Enums\UserType;
-use App\Filament\Resources\TraineeResource\Pages;
-use App\Filament\Resources\TraineeResource\RelationManagers;
+use App\Filament\Admin\Resources\AdminResource\Pages;
+use App\Filament\Admin\Resources\AdminResource\RelationManagers;
+use App\Models\Admin;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -13,14 +14,17 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TraineeResource extends Resource
+class AdminResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'iconpark-usertousertransmission-o';
+    protected static ?string $navigationIcon = 'heroicon-s-user-circle';
 
-    protected static ?string $navigationGroup = 'مركز اللياقة';
+    protected static ?string $navigationGroup = 'المركز الإداري';
+
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {
@@ -92,7 +96,7 @@ class TraineeResource extends Resource
                             ->required(),
 
                         Forms\Components\Hidden::make('type')
-                            ->default(UserType::Trainee->value),
+                            ->default(UserType::Admin->value),
 
                         Forms\Components\Fieldset::make('user info')
                             ->label('User Info')
@@ -118,11 +122,6 @@ class TraineeResource extends Resource
                             ->columns(1)
                     ])
                     ->columns(3),
-
-                Forms\Components\Fieldset::make('trainee')
-                    ->schema([])
-                    ->relationship('trainee')
-                    ->extraAttributes(['class' => 'hidden'])
             ]);
     }
 
@@ -130,64 +129,64 @@ class TraineeResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('first_name')
+                Tables\Columns\TextColumn::make('name')
                     ->label('Name')
-                    ->translateLabel(),
-
-                Tables\Columns\TextColumn::make('middle_name')
-                    ->label('Middle Name')
-                    ->translateLabel(),
-
-                Tables\Columns\TextColumn::make('last_name')
-                    ->label('Last Name')
-                    ->translateLabel(),
-
+                    ->translateLabel()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->label(__('Email'))
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('gender')
                     ->label('Gender')
                     ->translateLabel()
-                    ->formatStateUsing(fn($state) => $state->translate())
-                    ->badge(),
+                    ->sortable()
+                    ->badge()
+                    ->formatStateUsing(fn($state) => $state->translate()),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
-                Tables\Actions\ViewAction::make()
             ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListAdmins::route('/'),
+            'create' => Pages\CreateAdmin::route('/create'),
+            'edit' => Pages\EditAdmin::route('/{record}/edit'),
+        ];
     }
 
     public static function getEloquentQuery(): Builder
     {
         $query = parent::getEloquentQuery();
 
-        return $query->where('type', '=', UserType::Trainee);
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => \App\Filament\Admin\Resources\TraineeResource\Pages\ListTrainees::route('/'),
-            'create' => \App\Filament\Admin\Resources\TraineeResource\Pages\CreateTrainee::route('/create'),
-            'edit' => \App\Filament\Admin\Resources\TraineeResource\Pages\EditTrainee::route('/{record}/edit'),
-            'view' => \App\Filament\Admin\Resources\TraineeResource\Pages\ViewTrainee::route('/{record}'),
-        ];
+        return $query->where('type', '=', UserType::Admin);
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('Trainees');
+        return __('Admins');
     }
 
     public static function getLabel(): ?string
     {
-        return __('Trainee');
+        return __('Admin');
     }
 
     public static function getPluralLabel(): ?string
     {
-        return __('Trainees');
+        return __('Admins');
     }
 }

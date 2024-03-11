@@ -34,36 +34,48 @@ class CoachResource extends Resource
                             ->label('Name')
                             ->translateLabel()
                             ->required()
+                            ->regex('/^[\p{Arabic}a-zA-Z\s]*$/u')
+                            ->minLength(3)
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('middle_name')
                             ->label('Middle Name')
                             ->translateLabel()
                             ->required()
+                            ->regex('/^[\p{Arabic}a-zA-Z\s]*$/u')
+                            ->minLength(3)
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('last_name')
                             ->label('Last Name')
                             ->translateLabel()
                             ->required()
+                            ->regex('/^[\p{Arabic}a-zA-Z\s]*$/u')
+                            ->minLength(3)
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('city')
                             ->label('City')
                             ->translateLabel()
                             ->required()
+                            ->regex('/^[\p{Arabic}a-zA-Z\s]*$/u')
+                            ->minLength(3)
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('region')
                             ->label('Region')
                             ->translateLabel()
                             ->required()
+                            ->regex('/^[\p{Arabic}a-zA-Z\s]*$/u')
+                            ->minLength(3)
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('street')
                             ->label('Street')
                             ->translateLabel()
                             ->required()
+                            ->regex('/^[\p{Arabic}a-zA-Z\s]*$/u')
+                            ->minLength(3)
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('phone')

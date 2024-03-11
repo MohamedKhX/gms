@@ -27,7 +27,7 @@
                                 <li wire:click="selectCoach({{ $coach->id }})" class="cursor-pointer py-3 sm:py-4 px-5 rounded-lg flex justify-center {{ $selectedUser == $coach ? 'bg-gray-50 dark:bg-gray-600' : null }}">
                                     <div class="flex items-center w-full">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Neil image">
+                                            <img class="w-8 h-8 rounded-full" src="{{ "https://ui-avatars.com/api/?name={$coach->first_name[0]}+{$coach->last_name[0]}&color=FFFFFF&background=09090b" }}" alt="Neil image">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">

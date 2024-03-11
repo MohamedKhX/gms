@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\Gender;
 use App\Enums\UserType;
+use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,7 +16,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable, Billable;
 
@@ -67,4 +68,23 @@ class User extends Authenticatable
             return $this->first_name . ' ' . $this->last_name;
         });
     }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        if ($panel->getId() === 'admin') {
+            return $this->type === UserType::Admin;
+        }
+
+        if ($panel->getId() === 'coach') {
+            return $this->type === UserType::Coach;
+        }
+
+        if ($panel->getId() === 'trainee') {
+            return $this->type === UserType::Trainee;
+        }
+
+        return false;
+    }
+
+
 }

@@ -7,5 +7,6 @@ export default {
         './resources/views/filament/trainee/**/*.blade.php',
         './resources/views/livewire/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
+        './vendor/awcodes/overlook/resources/**/*.blade.php',
     ],
 }

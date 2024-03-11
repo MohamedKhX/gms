@@ -9,9 +9,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "awcodes/overlook": "^2.2",
         "bjerke/laravel-enums": "^2.1",
         "codeat3/blade-iconpark": "^1.5",
         "filament/filament": "^3.2",
+        "flowframe/laravel-trend": "^0.1.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/breeze": "^1.28",
         "laravel/cashier": "^15.2",

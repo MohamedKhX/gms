@@ -1,14 +1,12 @@
-Todos
--- Show diet html                                          -- Completed
--- Only the user type can login to their panel             -- Completed
--- when switch url logout                                  -- Completed
--- Complete Admin statistics page                          -- Completed
--- Complete the landing page                               -- Today
--- Make new data                                           -- Today
--- Make coaches_trainees table
--- Make the correct query for trainees in the coach panel
--- Can access panel in production
+// Todos
+-- Complete the landing page                                             [Done]
+-- change the login way with can_access panel instead of middlewares     [Done]
+-- add admins to admin panel                                             [Done]
+-- add reports to admin panel                                            [Done]
+-- Validate the inputs with the correct validation                       [Done]
+-- delete the private coaches features                                   [Done]
+-- Fix Url image
+-- Ensure everything is working correctly
+-- write the comments in the code
 
-Later Todos:
--- Write comments in the code
--- Make the folder and some code invisible
+

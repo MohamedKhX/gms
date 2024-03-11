@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <nav class="nav-menu">
+     {{--           <nav class="nav-menu">
                     <ul>
                         <li class="active"><a href="./index.html">Home</a></li>
                         <li><a href="./about-us.html">About Us</a></li>
@@ -53,7 +53,7 @@
                         <li><a href="./team.html">Our Team</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                     </ul>
-                </nav>
+                </nav>--}}
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
@@ -81,10 +81,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
-                        <div class="hi-text">
+                   {{--     <div class="hi-text">
                             <span>شكل جسمك</span>
                             <h1>كن <strong>قويا</strong> وتمرن بقوة</h1>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -93,11 +93,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
-                        <div class="hi-text">
+              {{--          <div class="hi-text">
                             <span>Shape your body</span>
                             <h1>Be <strong>strong</strong> traning hard</h1>
                             <a href="#" class="primary-btn">Get info</a>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@
 <!-- Banner Section End -->
 
 <!-- Pricing Section Begin -->
-<section class="pricing-section spad">
+{{--<section class="pricing-section spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -277,7 +277,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 <!-- Pricing Section End -->
 
 <!-- Gallery Section Begin -->
@@ -383,22 +383,22 @@
             <div class="col-md-4">
                 <div class="gt-text">
                     <i class="fa fa-map-marker"></i>
-                    <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
+                    <p style="margin-top: 0.7rem">بن عاشور - شارع الظل</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="gt-text">
                     <i class="fa fa-mobile"></i>
                     <ul>
-                        <li>125-711-811</li>
-                        <li>125-668-886</li>
+                        <li>091-0000000</li>
+                        <li>092-0000000</li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="gt-text email">
                     <i class="fa fa-envelope"></i>
-                    <p>Support.gymcenter@gmail.com</p>
+                    <p>gym@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -407,7 +407,7 @@
 <!-- Get In Touch Section End -->
 
 <!-- Footer Section Begin -->
-<section class="footer-section">
+{{--<section class="footer-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-4">
@@ -448,7 +448,7 @@
                     </ul>
                 </div>
             </div>
-           {{-- <div class="col-lg-4 col-md-6">
+           --}}{{-- <div class="col-lg-4 col-md-6">
                 <div class="fs-widget">
                     <h4>Tips & Guides</h4>
                     <div class="fw-recent">
@@ -466,7 +466,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>--}}
+            </div>--}}{{--
         </div>
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -478,7 +478,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 <!-- Footer Section End -->
 
 

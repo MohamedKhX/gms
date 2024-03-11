@@ -49,7 +49,7 @@ class CoachPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                IsCoach::class,
+/*                IsCoach::class,*/
                 Authenticate::class,
             ])
             ->viteTheme('resources/css/filament/trainee/theme.css');

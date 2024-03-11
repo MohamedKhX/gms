@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Enums\UserType;
 use App\Models\Message;
 use App\Models\User;
 use Illuminate\Support\Collection;
@@ -25,10 +26,11 @@ class Chat extends Component
     public function getReceivers()
     {
         if(auth()->user()->trainee) {
-            return auth()->user()->trainee->privateCoaches();
+            return User::where('type', UserType::Coach->value)->get();
+          //  return auth()->user()->trainee->privateCoaches();
         }
-
-        return auth()->user()->coach->trainees();
+        return User::where('type', UserType::Trainee->value)->get();
+      //  return auth()->user()->coach->trainees();
     }
 
     public function selectCoach($coachId): void
