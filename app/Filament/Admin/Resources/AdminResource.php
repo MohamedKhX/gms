@@ -87,6 +87,7 @@ class AdminResource extends Resource
                             ->translateLabel()
                             ->required()
                             ->tel()
+                            ->unique('users', 'phone', ignoreRecord: true)
                             ->maxLength(255),
 
                         Forms\Components\Select::make('gender')
