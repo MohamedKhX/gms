@@ -13,7 +13,8 @@ class StatsOverview extends BaseWidget
 {
     protected function getStats(): array
     {
-        $totalRevenue = Subscription::where('payment_method', PaymentMethod::CASH)->sum('price');
+        $totalRevenue = Subscription::where('payment_method', PaymentMethod::CASH)
+            ->sum('price');
 
         $lastYearRevenue = Subscription::where('payment_method', PaymentMethod::CASH)
             ->whereBetween('start_date', [Carbon::now()->subYear(), Carbon::now()])
@@ -23,7 +24,8 @@ class StatsOverview extends BaseWidget
             ->whereBetween('start_date', [Carbon::now()->subMonth(), Carbon::now()])
             ->sum('price');
 
-        $totalRevenueCard = Subscription::where('payment_method', PaymentMethod::CARD)->sum('price_dollar');
+        $totalRevenueCard = Subscription::where('payment_method', PaymentMethod::CARD)
+            ->sum('price_dollar');
 
         $lastYearRevenueCard = Subscription::where('payment_method', PaymentMethod::CARD)
             ->whereBetween('start_date', [Carbon::now()->subYear(), Carbon::now()])

@@ -14,14 +14,31 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 
+/*
+ هذه الصفحة خاصة بالمدربين
+لوحة التحكم: الادمن
+ * */
 class CoachResource extends Resource
 {
     protected static ?string $model = User::class;
+
+    /*
+        هذه الدالة تحدد الاستعلام الذي سيتم استخدامه لجلب البيانات
+     * */
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        return $query->where('type', '=', UserType::Coach);
+    }
 
     protected static ?string $navigationIcon = 'iconpark-muscle-o';
 
     protected static ?string $navigationGroup = 'مركز اللياقة';
 
+    /*
+     هذه الدالة تحدد الحقول التي ستظهر في صفحة الإنشاء أو تعديل
+     * */
     public static function form(Form $form): Form
     {
         return $form
@@ -83,6 +100,7 @@ class CoachResource extends Resource
                             ->translateLabel()
                             ->required()
                             ->tel()
+                            ->numeric()
                             ->unique('users', 'phone', ignoreRecord: true)
 
                             ->maxLength(255),
@@ -128,6 +146,9 @@ class CoachResource extends Resource
             ]);
     }
 
+    /*
+     هذه الدالة تحدد الحقول التي ستظهر في الجدول
+     * */
     public static function table(Table $table): Table
     {
         return $table
@@ -161,12 +182,23 @@ class CoachResource extends Resource
             ]);
     }
 
-    public static function getEloquentQuery(): Builder
-    {
-        $query = parent::getEloquentQuery();
 
-        return $query->where('type', '=', UserType::Coach);
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getRelations(): array
     {

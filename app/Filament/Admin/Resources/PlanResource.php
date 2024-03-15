@@ -17,6 +17,10 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use phpDocumentor\Reflection\Types\Integer;
 
+/*
+هذه الصفحة خاصة بالباقات
+لوحة التحكم: الادمن
+ * */
 class PlanResource extends Resource
 {
     protected static ?string $model = Plan::class;
@@ -25,6 +29,9 @@ class PlanResource extends Resource
 
     protected static ?string $navigationGroup = 'إدارة الاشتراكات';
 
+    /*
+      هذه الدالة تحدد الحقول التي ستظهر في صفحة الإنشاء أو تعديل
+      * */
     public static function form(Form $form): Form
     {
         return $form
@@ -103,6 +110,9 @@ class PlanResource extends Resource
             ]);
     }
 
+    /*
+     هذه الدالة تحدد الحقول التي ستظهر في الجدول
+     * */
     public static function table(Table $table): Table
     {
         return $table
@@ -164,6 +174,25 @@ class PlanResource extends Resource
                 Tables\Actions\EditAction::make(),
             ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getRelations(): array
     {

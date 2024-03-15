@@ -66,13 +66,27 @@ class SubscriptionResource extends Resource
                     ->translateLabel()
                     ->badge()
                     ->color(fn($record) => SubscriptionStatus::getColor($record->status))
-            ])
-            ->filters([
-
-            ])
-            ->actions([
             ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getPages(): array
     {

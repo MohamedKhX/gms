@@ -12,6 +12,10 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
+/*
+هذه الصفحة خاصة بالرياضات
+لوحة التحكم: الادمن
+ * */
 class SportResource extends Resource
 {
     protected static ?string $model = Sport::class;
@@ -20,6 +24,9 @@ class SportResource extends Resource
 
     protected static ?string $navigationGroup = 'مركز اللياقة';
 
+    /*
+      هذه الدالة تحدد الحقول التي ستظهر في صفحة الإنشاء أو تعديل
+      * */
     public static function form(Form $form): Form
     {
         return $form
@@ -45,6 +52,9 @@ class SportResource extends Resource
             ->columns(1);
     }
 
+    /*
+       هذه الدالة تحدد الحقول التي ستظهر في الجدول
+       * */
     public static function table(Table $table): Table
     {
         return $table
@@ -64,13 +74,27 @@ class SportResource extends Resource
                     ->translateLabel()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getRelations(): array
     {

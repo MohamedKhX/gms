@@ -13,20 +13,19 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
+/*
+ هذه الصفحة خاصة بالملاحظات
+لوحة التحكم: الادمن
+ * */
 class NoteResource extends Resource
 {
     protected static ?string $model = Note::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                //
-            ]);
-    }
-
+    /*
+    هذه الدالة تحدد الحقول التي سيتم عرضها في الجدول
+     * */
     public static function table(Table $table): Table
     {
         return $table
@@ -54,16 +53,16 @@ class NoteResource extends Resource
 
 
             ])
-            ->filters([
-                //
-            ])
             ->actions([
-              /*  Tables\Actions\EditAction::make(),*/
                 Tables\Actions\ViewAction::make()->color('primary'),
                 Tables\Actions\DeleteAction::make(),
             ]);
     }
 
+
+    /*
+     هذه الدالة تحدد الحقول التي سيتم عرضها في النموذج
+     * */
     public static function infolist(\Filament\Infolists\Infolist $infolist):  \Filament\Infolists\Infolist
     {
         return $infolist
@@ -108,19 +107,31 @@ class NoteResource extends Resource
             ->columns(1);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getPages(): array
     {
         return [
-            'index' => \App\Filament\Admin\Resources\NoteResource\Pages\ListNotes::route('/'),/*
-            'create' => Pages\CreateNote::route('/create'),
-            'edit' => Pages\EditNote::route('/{record}/edit'),*/
+            'index' => \App\Filament\Admin\Resources\NoteResource\Pages\ListNotes::route('/'),
         ];
     }
 

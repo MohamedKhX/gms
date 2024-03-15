@@ -16,9 +16,23 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+/*
+هذه الصفحة خاصة بالمشرفين
+لوحة التحكم: الادمن
+ * */
 class AdminResource extends Resource
 {
     protected static ?string $model = User::class;
+
+    /*
+هذه الدالة تحدد الاستعلام الذي سيتم استخدامه لجلب البيانات
+     * */
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        return $query->where('type', '=', UserType::Admin);
+    }
 
     protected static ?string $navigationIcon = 'heroicon-s-user-circle';
 
@@ -26,6 +40,9 @@ class AdminResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
+    /*
+     هذه الدالة تحدد الحقول التي ستظهر في صفحة الإنشاء أو تعديل
+     * */
     public static function form(Form $form): Form
     {
         return $form
@@ -87,6 +104,7 @@ class AdminResource extends Resource
                             ->translateLabel()
                             ->required()
                             ->tel()
+                            ->numeric()
                             ->unique('users', 'phone', ignoreRecord: true)
                             ->maxLength(255),
 
@@ -126,6 +144,9 @@ class AdminResource extends Resource
             ]);
     }
 
+    /*
+     هذه الدالة تحدد الحقول التي ستظهر في الجدول
+     * */
     public static function table(Table $table): Table
     {
         return $table
@@ -145,13 +166,30 @@ class AdminResource extends Resource
                     ->badge()
                     ->formatStateUsing(fn($state) => $state->translate()),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getRelations(): array
     {
@@ -169,12 +207,6 @@ class AdminResource extends Resource
         ];
     }
 
-    public static function getEloquentQuery(): Builder
-    {
-        $query = parent::getEloquentQuery();
-
-        return $query->where('type', '=', UserType::Admin);
-    }
 
     public static function getNavigationLabel(): string
     {

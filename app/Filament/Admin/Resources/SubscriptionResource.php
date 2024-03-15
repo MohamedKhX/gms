@@ -14,6 +14,11 @@ use Filament\Support\Colors\Color;
 use Filament\Tables;
 use Filament\Tables\Table;
 
+
+/*
+هذه الصفحة خاصة بعرض اشتراكات المتدربين
+لوحة التحكم: الادمن
+ * */
 class SubscriptionResource extends Resource
 {
     protected static ?string $model = Subscription::class;
@@ -22,6 +27,9 @@ class SubscriptionResource extends Resource
 
     protected static ?string $navigationGroup = 'إدارة الاشتراكات';
 
+    /*
+    هذه الدالة تحدد الحقول التي ستظهر في صفحة الإنشاء أو تعديل
+    * */
     public static function form(Form $form): Form
     {
         return $form
@@ -50,6 +58,9 @@ class SubscriptionResource extends Resource
             ]);
     }
 
+    /*
+    هذه الدالة تحدد الحقول التي ستظهر في الجدول
+    * */
     public static function table(Table $table): Table
     {
         return $table
@@ -103,6 +114,25 @@ class SubscriptionResource extends Resource
                 Tables\Actions\DeleteAction::make()
             ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getRelations(): array
     {

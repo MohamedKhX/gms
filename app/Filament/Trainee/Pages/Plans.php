@@ -10,9 +10,27 @@ class Plans extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-cube-transparent';
 
-    protected static string $view = 'filament.trainee.pages.plans';
-
     protected static ?int $navigationSort = 2;
+
+    public function renderPage()
+    {
+        return "Hello World!";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    protected static string $view = 'filament.trainee.pages.plans';
 
     public static function getNavigationLabel(): string
     {

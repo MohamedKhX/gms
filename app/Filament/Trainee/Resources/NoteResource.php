@@ -42,6 +42,7 @@ class NoteResource extends Resource
 
             ])->columns(1);
     }
+
     public static function table(Table $table): Table
     {
         return $table
@@ -56,11 +57,7 @@ class NoteResource extends Resource
                     ->translateLabel()
                     ->words(4),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
-                /*  Tables\Actions\EditAction::make(),*/
                 Tables\Actions\ViewAction::make()->color('primary'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
@@ -88,6 +85,34 @@ class NoteResource extends Resource
             ])
             ->columns(1);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getPages(): array
     {

@@ -18,10 +18,23 @@ class TraineeResource extends Resource
 {
     protected static ?string $model = User::class;
 
+    /*
+    هذه الدالة تحدد الاستعلام الذي سيتم استخدامه لجلب البيانات
+     * */
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        return $query->where('type', '=', UserType::Trainee);
+    }
+
     protected static ?string $navigationIcon = 'iconpark-usertousertransmission-o';
 
     protected static ?string $navigationGroup = 'مركز اللياقة';
 
+    /*
+     هذه الدالة تحدد الحقول التي ستظهر في صفحة الإنشاء أو تعديل
+     * */
     public static function form(Form $form): Form
     {
         return $form
@@ -83,6 +96,7 @@ class TraineeResource extends Resource
                             ->translateLabel()
                             ->required()
                             ->tel()
+                            ->numeric()
                             ->unique('users', 'phone', ignoreRecord: true)
                             ->maxLength(255),
 
@@ -127,6 +141,9 @@ class TraineeResource extends Resource
             ]);
     }
 
+    /*
+    هذه الدالة تحدد الحقول التي ستظهر في الجدول
+    * */
     public static function table(Table $table): Table
     {
         return $table
@@ -160,12 +177,20 @@ class TraineeResource extends Resource
             ]);
     }
 
-    public static function getEloquentQuery(): Builder
-    {
-        $query = parent::getEloquentQuery();
 
-        return $query->where('type', '=', UserType::Trainee);
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function getPages(): array
     {
