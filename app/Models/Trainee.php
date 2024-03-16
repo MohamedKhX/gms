@@ -19,10 +19,36 @@ class Trainee extends Model
         'updated_at'
     ];
 
+    /*
+     علاقة واحد لواحد مع المستخدم
+     * */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function name(): Attribute
     {

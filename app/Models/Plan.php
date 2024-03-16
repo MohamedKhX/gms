@@ -15,6 +15,43 @@ class Plan extends Model
         'updated_at',
     ];
 
+    /*
+      المدرب الخاص بالباقة
+     * */
+    public function privateCoach(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Coach::class, 'private_coach_id');
+    }
+
+    /*
+     الرياضات المتاحة في الباقة
+     * */
+    public function sports(): BelongsToMany
+    {
+        return $this->belongsToMany(Sport::class);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     protected static function boot(): void
     {
         parent::boot();
@@ -30,19 +67,10 @@ class Plan extends Model
         });
     }
 
-    public function sports(): BelongsToMany
-    {
-        return $this->belongsToMany(Sport::class);
-    }
 
     public function subscriptions(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Subscription::class);
-    }
-
-    public function privateCoach(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(Coach::class, 'private_coach_id');
     }
 
 

@@ -10,6 +10,36 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Coach extends Model
 {
+    /* علاقة واحد لواحد مع المستخدم */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     use HasFactory;
 
     protected $guarded = [
@@ -17,10 +47,6 @@ class Coach extends Model
         'updated_at'
     ];
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function traineeSubscriptions(): HasManyThrough
     {

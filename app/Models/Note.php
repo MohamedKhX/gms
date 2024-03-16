@@ -15,6 +15,9 @@ class Note extends Model
         'updated_at'
     ];
 
+    /*
+     كاتب الملاحظة
+     * */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
