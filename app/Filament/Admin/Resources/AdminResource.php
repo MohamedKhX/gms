@@ -165,12 +165,12 @@ class AdminResource extends Resource
                     ->translateLabel()
                     ->sortable()
                     ->badge()
-                    ->color('')
+                    ->color('success')
                     ->formatStateUsing(fn($state) => $state->translate()),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->color(''),
+                    ->color('primary'),
             ]);
     }
 

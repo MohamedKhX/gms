@@ -39,7 +39,7 @@ class NoteResource extends Resource
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())
                     ->badge()
-                    ->color(''),
+                    ->color('primary'),
 
 
                 Tables\Columns\TextColumn::make('title')
@@ -56,7 +56,7 @@ class NoteResource extends Resource
                 Tables\Actions\ViewAction::make()
                     ->color('primary'),
                 Tables\Actions\DeleteAction::make()
-                    ->color(''),
+                    ->color('danger'),
             ]);
     }
 

@@ -165,15 +165,16 @@ class TraineeResource extends Resource
                     ->label('Gender')
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())
+                    ->color('primary')
                     ->badge(),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->color('success'),
+                Tables\Actions\DeleteAction::make()
+                    ->color('danger'),
                 Tables\Actions\ViewAction::make()
+                    ->color('primary')
             ]);
     }
 

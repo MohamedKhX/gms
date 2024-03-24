@@ -165,15 +165,12 @@ class PlanResource extends Resource
                 Tables\Columns\TextColumn::make('sports.name')
                     ->translateLabel()
                     ->label('Sports')
-                    ->color('')
+                    ->color('primary')
                     ->badge(),
-            ])
-            ->filters([
-                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->color(''),
+                    ->color('primary'),
             ]);
     }
 

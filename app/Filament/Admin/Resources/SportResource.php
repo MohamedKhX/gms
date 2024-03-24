@@ -77,7 +77,9 @@ class SportResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->color(''),
+                    ->color('primary'),
+                Tables\Actions\DeleteAction::make()
+                    ->color('danger')
             ]);
     }
 

@@ -109,7 +109,7 @@ class SubscriptionResource extends Resource
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make()
-                    ->color('')
+                    ->color('danger')
             ]);
     }
 

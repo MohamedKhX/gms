@@ -170,15 +170,15 @@ class CoachResource extends Resource
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())
                     ->badge()
-                    ->color(''),
+                    ->color('success'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->color(''),
+                    ->color('primary'),
                 Tables\Actions\DeleteAction::make()
-                    ->color(''),
+                    ->color('danger'),
                 Tables\Actions\ViewAction::make()
-                    ->color('')
+                    ->color('success')
             ]);
     }
 
