@@ -158,20 +158,22 @@ class PlanResource extends Resource
                     ->translateLabel()
                     ->label('Duration')
                     ->badge()
-                    ->color(Color::Amber)
+                    ->color('primary')
                     ->suffix(' يوم ')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('sports.name')
                     ->translateLabel()
                     ->label('Sports')
+                    ->color('')
                     ->badge(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->color(''),
             ]);
     }
 

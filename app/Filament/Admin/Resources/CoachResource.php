@@ -165,20 +165,20 @@ class CoachResource extends Resource
                     ->label('Last Name')
                     ->translateLabel(),
 
-
                 Tables\Columns\TextColumn::make('gender')
                     ->label('Gender')
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())
-                    ->badge(),
-            ])
-            ->filters([
-                //
+                    ->badge()
+                    ->color(''),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->color(''),
+                Tables\Actions\DeleteAction::make()
+                    ->color(''),
                 Tables\Actions\ViewAction::make()
+                    ->color('')
             ]);
     }
 

@@ -77,14 +77,14 @@ class SubscriptionResource extends Resource
                     ->label('Start Date')
                     ->translateLabel()
                     ->badge()
-                    ->color(Color::Amber)
+                    ->color('primary')
                     ->date(),
 
                 Tables\Columns\TextColumn::make('end_date')
                     ->label('End Date')
                     ->translateLabel()
                     ->badge()
-                    ->color(Color::Amber)
+                    ->color('orange')
                     ->date(),
 
                 Tables\Columns\TextColumn::make('pricePaid')
@@ -98,20 +98,18 @@ class SubscriptionResource extends Resource
                     ->label('Payment Method')
                     ->translateLabel()
                     ->badge()
-                    ->color(Color::Green)
+                    ->color('success')
                     ->formatStateUsing(fn($state) => $state->translate()),
 
                 Tables\Columns\TextColumn::make('status')
                     ->label('Status')
                     ->translateLabel()
                     ->badge()
-                    ->color(fn($record) => SubscriptionStatus::getColor($record->status))
-            ])
-            ->filters([
-
+                    ->color('success')
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make()
+                    ->color('')
             ]);
     }
 

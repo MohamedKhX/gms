@@ -14,8 +14,8 @@ return new class extends Migration
     {
         Schema::create('trainee_subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('trainee_id')->references('id')->on('trainees');
-            $table->foreignId('plan_id')->references('id')->on('plans');
+            $table->foreignId('trainee_id');
+            $table->foreignId('plan_id');
             $table->integer('duration');
             $table->integer('price')->nullable();
             $table->integer('price_dollar')->nullable();

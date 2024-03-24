@@ -155,6 +155,7 @@ class AdminResource extends Resource
                     ->label('Name')
                     ->translateLabel()
                     ->searchable(),
+
                 Tables\Columns\TextColumn::make('email')
                     ->label(__('Email'))
                     ->searchable(),
@@ -164,10 +165,12 @@ class AdminResource extends Resource
                     ->translateLabel()
                     ->sortable()
                     ->badge()
+                    ->color('')
                     ->formatStateUsing(fn($state) => $state->translate()),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->color(''),
             ]);
     }
 

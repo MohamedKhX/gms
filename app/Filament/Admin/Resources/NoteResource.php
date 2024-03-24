@@ -38,7 +38,8 @@ class NoteResource extends Resource
                     ->label('Sender Type')
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())
-                    ->badge(),
+                    ->badge()
+                    ->color(''),
 
 
                 Tables\Columns\TextColumn::make('title')
@@ -50,12 +51,12 @@ class NoteResource extends Resource
                     ->label('Details')
                     ->translateLabel()
                     ->words(4),
-
-
             ])
             ->actions([
-                Tables\Actions\ViewAction::make()->color('primary'),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->color('primary'),
+                Tables\Actions\DeleteAction::make()
+                    ->color(''),
             ]);
     }
 

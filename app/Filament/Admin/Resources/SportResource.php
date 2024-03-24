@@ -67,7 +67,8 @@ class SportResource extends Resource
                     ->label('Status')
                     ->translateLabel()
                     ->formatStateUsing(fn($state) => $state->translate())
-                    ->badge(),
+                    ->badge()
+                    ->color(''),
 
                 Tables\Columns\TextColumn::make('description')
                     ->label('Description')
@@ -75,7 +76,8 @@ class SportResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->color(''),
             ]);
     }
 
