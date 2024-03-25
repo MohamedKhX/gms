@@ -171,6 +171,7 @@ class AdminResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make()
                     ->color('primary'),
+                Tables\Actions\DeleteAction::make()
             ]);
     }
 
