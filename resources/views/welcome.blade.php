@@ -44,19 +44,21 @@
                 </div>
             </div>
             <div class="col-lg-6">
-     {{--           <nav class="nav-menu">
-                    <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About Us</a></li>
-                        <li><a href="./class-details.html">Classes</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./team.html">Our Team</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </nav>--}}
+
+                {{--           <nav class="nav-menu">
+                               <ul>
+                                   <li class="active"><a href="./index.html">Home</a></li>
+                                   <li><a href="./about-us.html">About Us</a></li>
+                                   <li><a href="./class-details.html">Classes</a></li>
+                                   <li><a href="./services.html">Services</a></li>
+                                   <li><a href="./team.html">Our Team</a></li>
+                                   <li><a href="./contact.html">Contact</a></li>
+                               </ul>
+                           </nav>--}}
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
+                    <a href="/admin/login" class="primary-btn btn-normal">تسجيل دخول</a>
 
                     <div class="to-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
