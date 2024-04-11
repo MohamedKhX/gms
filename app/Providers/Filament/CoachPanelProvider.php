@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Auth\Login;
 use App\Http\Middleware\IsCoach;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,7 +27,7 @@ class CoachPanelProvider extends PanelProvider
         return $panel
             ->id('coach')
             ->path('coach')
-            ->login()
+            ->login(Login::class)
             ->colors([
                 'primary' => Color::Emerald,
             ])
@@ -49,7 +50,6 @@ class CoachPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-/*                IsCoach::class,*/
                 Authenticate::class,
             ])
             ->viteTheme('resources/css/filament/trainee/theme.css');

@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Auth\Login;
 use App\Filament\Trainee\Pages\Auth\EditProfile;
 use App\Filament\Trainee\Pages\Auth\Register;
 use App\Http\Middleware\IsTrainee;
@@ -27,7 +28,7 @@ class TraineePanelProvider extends PanelProvider
     {
         return $panel
             ->id('trainee')
-            ->login()
+            ->login(Login::class)
             ->registration(Register::class)
             ->profile(EditProfile::class)
             ->path('trainee')

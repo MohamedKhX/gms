@@ -2,8 +2,8 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Admin\Pages\Login;
 use App\Filament\Admin\Resources\ProductResource;
+use App\Filament\Auth\Login;
 use App\Http\Middleware\IsAdmin;
 use Awcodes\Overlook\OverlookPlugin;
 use Awcodes\Overlook\Widgets\OverlookWidget;
@@ -31,11 +31,9 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->login(Login::class)
             ->plugins([
                 OverlookPlugin::make()
-                    ->excludes([
-                        ProductResource::class
-                    ])
                     ->sort(2)
                     ->columns([
                         'default' => 1,
@@ -46,7 +44,6 @@ class AdminPanelProvider extends PanelProvider
                         '2xl' => null,
                     ]),
             ])
-            ->login()
             ->colors([
                 'primary' => Color::Orange,
             ])
