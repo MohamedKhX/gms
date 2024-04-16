@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+@php
+    use App\Enums\PaymentMethod;use App\Models\Subscription;
+    $totalRevenue = Subscription::where('payment_method', PaymentMethod::CASH)
+              ->sum('price');
+    $totalRevenueCard = Subscription::where('payment_method', PaymentMethod::CARD)
+            ->sum('price_dollar');
+
+@endphp
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,19 +39,19 @@
         </div>
         <div class="mt-4">
             <h2 class="text-lg font-semibold mb-2">عدد الاشتراكات</h2>
-            <p class="text-gray-700">34</p>
+            <p class="text-gray-700">{{ Subscription::count() }}</p>
         </div>
         <div class="mt-4">
             <h2 class="text-lg font-semibold mb-2">عدد المتدربين</h2>
-            <p class="text-gray-700">23</p>
+            <p class="text-gray-700">{{ \App\Models\Trainee::count() }}</p>
         </div>
         <div class="mt-4">
             <h2 class="text-lg font-semibold mb-2">عدد المدربين</h2>
-            <p class="text-gray-700">41</p> <!-- Replace XX with actual number of coaches -->
+            <p class="text-gray-700">{{ \App\Models\Coach::count() }}</p> <!-- Replace XX with actual number of coaches -->
         </div>
         <div class="mt-4">
             <h2 class="text-lg font-semibold mb-2">عدد المشرفين</h2>
-            <p class="text-gray-700">23</p> <!-- Replace XX with actual number of coaches -->
+            <p class="text-gray-700">{{ \App\Models\User::where('type', \App\Enums\UserType::Admin)->count() }}</p> <!-- Replace XX with actual number of coaches -->
         </div>
     </div>
 </div>
