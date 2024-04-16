@@ -31,11 +31,11 @@
     <div class="grid grid-cols-2 gap-4 mt-5 justify-end place-content-end" style="text-align: center;">
         <div class="block text-end">
             <h2 class="text-lg font-semibold mb-2 text-end">الأرباح الكلية بالدينار</h2>
-            <p class="text-gray-700">600 دينار</p>
+            <p class="text-gray-700">{{ $totalRevenue . ' LYD' }}</p>
         </div>
         <div class="mt-4">
             <h2 class="text-lg font-semibold mb-2">الأرباح الكلية بالدولار</h2>
-            <p class="text-gray-700">$432</p>
+            <p class="text-gray-700">{{ $totalRevenueCard . ' USD' }}</p>
         </div>
         <div class="mt-4">
             <h2 class="text-lg font-semibold mb-2">عدد الاشتراكات</h2>
