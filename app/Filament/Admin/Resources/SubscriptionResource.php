@@ -7,12 +7,15 @@ use App\Filament\Resources\SubscriptionResource\Pages;
 use App\Filament\Resources\SubscriptionResource\RelationManagers;
 use App\Models\Plan;
 use App\Models\Subscription;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Support\Colors\Color;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Blade;
 
 
 /*
@@ -109,7 +112,7 @@ class SubscriptionResource extends Resource
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make()
-                    ->color('danger')
+                    ->color('danger'),
             ]);
     }
 

@@ -25,7 +25,7 @@ Route::get('/subscribe/{plan:id}', [SubscriptionController::class, 'subscribe'])
 Route::get('/cancel',    [SubscriptionController::class, 'cancel'])->name('cancel');
 
 Route::get('test', function () {
-   return auth()->user()->coach->trainees;
+   return view('report');
 });
 
 /*

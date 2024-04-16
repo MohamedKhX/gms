@@ -58,7 +58,17 @@
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
-                    <a href="/admin/login" class="primary-btn btn-normal">تسجيل دخول</a>
+                    @auth
+                        @if(Auth::user()->type == \App\Enums\UserType::Admin)
+                            <a href="/admin/" class="primary-btn btn-normal">تسجيل دخول</a>
+                        @elseif(Auth::user()->type == \App\Enums\UserType::Coach)
+                            <a href="/coach/" class="primary-btn btn-normal">تسجيل دخول</a>
+                        @else
+                            <a href="/trainee/" class="primary-btn btn-normal">تسجيل دخول</a>
+                        @endif
+                    @else
+                        <a href="/admin/login" class="primary-btn btn-normal">تسجيل دخول</a>
+                    @endauth
 
                     <div class="to-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>

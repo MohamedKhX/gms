@@ -10,18 +10,23 @@
     "require": {
         "php": "^8.1",
         "awcodes/overlook": "^2.2",
+        "barryvdh/laravel-dompdf": "^2.1",
         "bjerke/laravel-enums": "^2.1",
         "codeat3/blade-iconpark": "^1.5",
         "filament/filament": "^3.2",
         "flowframe/laravel-trend": "^0.1.5",
         "guzzlehttp/guzzle": "^7.2",
+        "khaled.alshamaa/ar-php": "^6.3",
         "laravel/breeze": "^1.28",
         "laravel/cashier": "^15.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0",
-        "livewire/volt": "^1.0"
+        "livewire/volt": "^1.0",
+        "misterspelik/laravel-pdf": "^1.1",
+        "niklasravnsborg/laravel-pdf": "^4.1",
+        "spatie/browsershot": "^4.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
