@@ -55,4 +55,35 @@ class Subscription extends Model
             return $this->price_dollar . ' دولار ';
         });
     }
+
+    public function traineeName(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            return Trainee::find($this->trainee_id)->name;
+        });
+    }
+
+    public function planName(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            return Plan::find($this->plan_id)->name;
+        });
+    }
+
+    public function paymentMethodx(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            return $this->payment_method->translate();
+        });
+    }
+
+    public static function getExportColumns(): array
+    {
+        return [
+            'traineeName' => 'المتدرب',
+            'planName' => 'الباقة',
+            'pricePaid' => 'السعر',
+            'paymentMethodx' => 'طريقة الدفع',
+        ];
+    }
 }

@@ -24,9 +24,9 @@ Route::get('/checkout/{plan:stripe_price_id}/{plan_id}',  [SubscriptionControlle
 Route::get('/subscribe/{plan:id}', [SubscriptionController::class, 'subscribe'])->name('subscribe');
 Route::get('/cancel',    [SubscriptionController::class, 'cancel'])->name('cancel');
 
-Route::get('test', function () {
-   return view('report');
-});
+Route::get('/print/subscriptions', [\App\Http\Controllers\ReportsController::class, 'printSubscriptions'])->name('print.subscriptions');
+Route::get('/print/trainees', [\App\Http\Controllers\ReportsController::class, 'printTrainees'])->name('print.trainees');
+Route::get('/print/coaches', [\App\Http\Controllers\ReportsController::class, 'printCoaches'])->name('print.coaches');
 
 /*
 Route::view('dashboard', 'dashboard')

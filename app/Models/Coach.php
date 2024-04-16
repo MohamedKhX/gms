@@ -61,6 +61,38 @@ class Coach extends Model
         });
     }
 
+    public static function getExportColumns(): array
+    {
+        return [
+            'name' => 'الاسم',
+            'email' => 'الاميل',
+            'phone' => 'رقم الهاتف',
+            'gender' => 'الجنس',
+        ];
+    }
+
+    public function email(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            return $this->user->email;
+        });
+    }
+
+    public function phone(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            return $this->user->phone;
+        });
+    }
+
+    public function gender(): Attribute
+    {
+        return Attribute::get(function ($value) {
+            return $this->user->gender->translate();
+        });
+    }
+
+
     public function name(): Attribute
     {
         return Attribute::get(function ($value) {
