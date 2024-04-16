@@ -27,7 +27,7 @@
                                 <li wire:click="selectCoach({{ $coach->id }})" class="cursor-pointer py-3 sm:py-4 px-5 rounded-lg flex justify-center {{ $selectedUser == $coach ? 'bg-gray-50 dark:bg-gray-600' : null }}">
                                     <div class="flex items-center w-full">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="{{ "https://ui-avatars.com/api/?name={$coach->first_name[0]}+{$coach->last_name[0]}&color=FFFFFF&background=09090b" }}" alt="Neil image">
+                                            <img class="w-8 h-8 rounded-full" src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" }}" alt="Neil image">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -47,7 +47,7 @@
                         <div x-data="{}" @message-sent.window="scrollToBottom()" class="flex flex-col gap-2 p-5 overflow-auto" style="max-height: 30rem">
                             @forelse($messages as $message)
                                 <div class="flex items-start gap-2.5">
-                                    <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese image">
+                                    <img class="w-8 h-8 rounded-full" src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" alt="Jese image">
                                     <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 {{ auth()->id() === $message->sender_id ? 'bg-blue-100' : 'bg-gray-100' }} rounded-e-xl rounded-es-xl dark:bg-gray-700" style="word-wrap: break-word;">
                                         <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                     <span class="text-sm font-semibold text-gray-900 dark:text-white">
