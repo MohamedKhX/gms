@@ -31,11 +31,13 @@ class NoteResource extends Resource
             ->schema([
                     Forms\Components\TextInput::make('title')
                         ->label('Title')
-                        ->translateLabel(),
+                        ->translateLabel()
+                        ->required(),
 
                     Forms\Components\Textarea::make('details')
                         ->label('Details')
-                        ->translateLabel(),
+                        ->translateLabel()
+                        ->required(),
 
                     Forms\Components\Hidden::make('user_id')
                         ->default(Filament::auth()->id()),

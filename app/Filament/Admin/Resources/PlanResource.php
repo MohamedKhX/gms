@@ -54,7 +54,8 @@ class PlanResource extends Resource
                             ->label('Description')
                             ->translateLabel()
                             ->placeholder(__('Enter the plan description'))
-                            ->columnSpan(2),
+                            ->columnSpan(2)
+                            ->required(),
 
                         Forms\Components\TextInput::make('price')
                             ->label('Price')
