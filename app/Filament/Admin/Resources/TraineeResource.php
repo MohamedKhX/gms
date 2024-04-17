@@ -40,7 +40,7 @@ class TraineeResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Fieldset::make('user')
-                    ->label("Coach Info")
+                    ->label("Trainee Info")
                     ->translateLabel()
                     ->schema([
                         Forms\Components\TextInput::make('first_name')
